@@ -96,3 +96,13 @@ Terraform plugins must follow a very specific naming convention of
 `terraform-TYPE-NAME`. For example, `terraform-provider-aws`, which
 tells Terraform that the plugin is a provider that can be referenced
 as "aws".
+
+-> **Note:** Running ```go get``` gets the bleeding edge version of
+Terraform from GitHub. Confusing errors may occur 
+(e.g. ``` Incompatible API version with plugin. Plugin version: 1, Ours: 2 ```  
+if the version of Terraform on your system is a different major version than the version 
+of Terraform on Github. If this occurs then you can either update the version 
+of Terraform on the system or checkout an earlier version of Terraform 
+in the repository that golang downloads The terraform repository should
+be downloaded here ``` $GOPATH/src/github.com/hashicorp/terraform ```
+and then you can run something like ``` git checkout tags/v0.x.x ```.
